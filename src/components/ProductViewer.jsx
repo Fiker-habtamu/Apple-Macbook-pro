@@ -4,11 +4,14 @@ import { Box, OrbitControls } from "@react-three/drei";
 import { useMacBookStore } from "../store";
 import clsx from "clsx";
 import MacBookModel14 from "./models/Macbook-14";
-import StudioLight from "./models/StudioLight";
+import StudioLight from "./Three/StudioLight";
+import ModelSwitcher from "./Three/ModelSwitcher";
+import {useMediaQuery} from 'react-responsive'
 
 function ProductViewer() {
   const { color, scale, setColor, setScale } = useMacBookStore();
-
+const isMobile = useMediaQuery({ query: '(max-width:720px)' })
+console.log(isMobile)
   return (
     // Base layout: Dark background, fixed/screen height, relative positioning
     <section
@@ -23,15 +26,15 @@ function ProductViewer() {
       </div>
 
       {/* 2. Middle Section: The 3D Canvas Background layer */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-[full] h-full z-0 mt-7 flex justify-center items-center">
         <Canvas
           shadows
           id="canvas"
           camera={{ position: [0, 2, 5], fov: 50, near: 0.1, far: 100 }}
         >
           <StudioLight />
-          <MacBookModel14 scale={scale} position={[0, 0, 0]} color={color} />
-          <OrbitControls enableZoom={false} />
+
+          <ModelSwitcher scale={isMobile ? scale - 0.03: scale} isMobile={isMobile}/>
         </Canvas>
       </div>
 

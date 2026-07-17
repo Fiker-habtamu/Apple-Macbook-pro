@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, useTexture } from '@react-three/drei'
 
 export default function MacBook(props) {
   const { nodes, materials } = useGLTF('/models/macbook-transformed.glb')
