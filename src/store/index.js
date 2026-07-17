@@ -1,6 +1,6 @@
 import {create} from 'zustand'
 
-const useMacbookStore = create((set)=({
+const useMacBookStore = create((set)=>({
 	color: '#2e2c2e',
 	setColor: (color) => set({color}),
 
@@ -10,4 +10,4 @@ const useMacbookStore = create((set)=({
 	rest: () => ({ color: "#2e2c2e", scale:0.08})
 }))
 
-export {useMacbookStore};
+export {useMacBookStore};
