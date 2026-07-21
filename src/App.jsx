@@ -13,6 +13,7 @@ function App() {
       <NavBar />
       <Header/>
       <ProductViewer/>
+      <ShowCase/>
     </main>
   );
 }
