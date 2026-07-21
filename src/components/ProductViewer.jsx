@@ -11,7 +11,6 @@ import {useMediaQuery} from 'react-responsive'
 function ProductViewer() {
   const { color, scale, setColor, setScale } = useMacBookStore();
 const isMobile = useMediaQuery({ query: '(max-width:720px)' })
-console.log(isMobile)
   return (
     // Base layout: Dark background, fixed/screen height, relative positioning
     <section
