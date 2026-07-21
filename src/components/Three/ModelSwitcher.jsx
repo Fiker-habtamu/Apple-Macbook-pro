@@ -69,7 +69,7 @@ function ModelSwitcher({ scale, isMobile }) {
 			<MacBookModel14 scale={isMobile ? 0.03 : 0.06}/>
 		</group>
 	  </PresentationControls>
-    </>
+    </>    
   );
 }
 
