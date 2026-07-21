@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import ProductViewer from "./components/ProductViewer";
 import gsap from "gsap";
 import {ScrollTrigger}from 'gsap/all'
+import ShowCase from "./components/ShowCase";
 
 gsap.registerPlugin(ScrollTrigger)
 function App() {
