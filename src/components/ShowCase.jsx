@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 function ShowCase() {
   const isTablet = useMediaQuery({ query: "(max-width: 800px)" });
-
   useGSAP(() => {
     if (!isTablet) {
       // 1. Start the black mask overlay massive (scale 60)
@@ -52,7 +51,7 @@ function ShowCase() {
     <section id="showcase" className="relative w-full bg-black overflow-hidden">
       
       {/* Media Wrapper */}
-      <div className="media relative w-full h-screen bg-black flex items-center justify-center overflow-hidden">
+      <div className="media relative w-full bg-black flex max-md:h-[50vh] max-md:overflow-hidden">
         
         {/* Layer 1: Fullscreen Video (Bottom) */}
         <video
@@ -61,15 +60,15 @@ function ShowCase() {
           muted
           autoPlay
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 z-0 w-full h-full object-cover max-md:h-1/2 "
         />
 
         {/* Layer 2: Mask Image Overlay (Top - Animated by GSAP) */}
-        <div className="mask-overlay absolute inset-0 w-full h-full z-10 pointer-events-none flex items-center justify-center">
+        <div className="mask-overlay scale-150 absolute top-0 mt-0 pt-0 z-10 pointer-events-none">
           <img
             src="/mask-logo.svg"
             alt="Mask Logo"
-            className="w-full h-full object-contain"
+            className="w-full! h-full! object-contain"
           />
         </div>
 
