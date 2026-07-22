@@ -14,7 +14,7 @@ function ShowCase() {
       // 1. Start the black mask overlay massive (scale 60)
       // This positions the transparent cutout over the whole viewport so video is fullscreen
       gsap.set(".mask-overlay", {
-        scale: 60,
+        scale: 160,
         transformOrigin: "center center",
       });
 
@@ -23,7 +23,7 @@ function ShowCase() {
         scrollTrigger: {
           trigger: "#showcase",
           start: "top top",
-          end: "+=150%",
+          end: "bottom top",
           scrub: 1,
           pin: true,
         },
@@ -32,7 +32,7 @@ function ShowCase() {
       timeLine
         // Zoom down to scale 1 (normal size framing the video)
         .to(".mask-overlay", {
-          scale: 1,
+          scale: 1.5,
           ease: "power1.inOut",
         })
         // Fade up the text content once the mask lands
