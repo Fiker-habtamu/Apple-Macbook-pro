@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function ShowCase() {
-  const isTablet = useMediaQuery({ query: "(max-width: 800px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 900px)" });
   useGSAP(() => {
     if (!isTablet) {
       // 1. Start the black mask overlay massive (scale 60)
